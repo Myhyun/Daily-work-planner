@@ -31,3 +31,13 @@ $(".time-block").each(function(){
     $(this).attr("class", "row time-block present");
 });
 
+
+var plans = JSON.parse(localStorage.getItem("plans"));
+var planArr = [];
+localStorage.setItem("plans", JSON.stringify(planArr));
+
+
+
+
+
+
