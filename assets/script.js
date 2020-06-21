@@ -29,11 +29,12 @@ $(function () {
       $(this).attr("class", "row time-block present");
   });
 
-  $(".saveBtn").on('click', function () {
-    var userInput = $(".col-md-10 description").value;
-    var userInputs = [userInput]
-    var plans = localStorage.setItem('plans', JSON.stringify(userInputs));
-    console.log(plans)
-    
+  $(".btn").on('click', function (event) {
+    var userInput = $(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, userInput);
+    var plans = localStorage.setItem(time, JSON.stringify(userInput));
+    console.log(plans);
+    $(".description").text(localStorage.getItem(plans));
   });
 });
